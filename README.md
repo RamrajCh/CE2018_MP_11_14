@@ -1,1 +1,19 @@
-# CE2018_MP_11_14
+# COMP202-MiniProject
+
+6.Implement a queue using a circularly linked list with the following operations:
+
+    • enqueue – Inserts an element at the end of the queue
+
+    • dequeue – Displays and deletes an element from the front of the queue
+
+    • rear – Displays the last element of the queue
+
+    • front – Displays the first element of the queue
+
+    • isEmpty – Returns true if the queue is empty and false otherwise
+
+    • isFull – Returns true if the queue is full and false otherwise
+
+What are the time complexities of these operations in your implementation?
+
+You are supposed to use the linked list implementation done in Lab 2.
