@@ -1,8 +1,8 @@
 #include "circularlinkedqueue.h"
 
+
 CircularLinkedQueue::CircularLinkedQueue(int max_size)
 {
-    C();
     n=0;
     max=max_size;
 }
@@ -28,7 +28,7 @@ int CircularLinkedQueue::front()
 {
     if(isEmpty())
     {
-        cout<<"Queue is empty";
+    	cout<<"Queue Empty.No front element"<<endl;  
     }
     else
     {
@@ -40,7 +40,7 @@ int CircularLinkedQueue::rear()
 {
     if(isEmpty())
     {
-        cout<<"Queue is empty";
+        cout<<"Queue Empty.No rear element"<<endl;
     }
     else
     {
@@ -53,11 +53,12 @@ void CircularLinkedQueue::enqueue(int ele)
     if(!isFull())
     {
         C.addToTail(ele);
+        //C.advance();
         n++; 
     }
     else
     {
-        cout<<"Queue overflow"
+        cout<<"Queue overflow"<<endl;
     }    
 }
 
@@ -65,11 +66,11 @@ void CircularLinkedQueue::dequeue()
 {
     if(isEmpty())
     {
-        cout<<"Queue is empty"
+        cout<<"Queue is empty.No node to remove."<<endl;
     }
     else
     {
-        C.removeFromHead()
+        C.removeFromHead();
         n--;
     }
 }

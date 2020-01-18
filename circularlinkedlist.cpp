@@ -4,28 +4,28 @@ using namespace std;
 
 CircularLinkedList::CircularLinkedList()
 {
-    queue=NULL;
+    cursor=NULL;
 }
 
 CircularLinkedList::~CircularLinkedList(){}
 
 bool CircularLinkedList::isEmpty()
 {
-    return queue==NULL;
+    return cursor==NULL;
 }
 
 int CircularLinkedList::head()
 {
     if(!isEmpty())
     {
-        return queue->next->info;
+        return cursor->next->info;
     }
 }
 
 int CircularLinkedList::tail()
 {
     if(!isEmpty())
-        return queue->info;
+        return cursor->info;
 }
 
 void CircularLinkedList::addToTail(int ele)
@@ -35,32 +35,41 @@ void CircularLinkedList::addToTail(int ele)
     if(isEmpty())
     {
         newNode->next=newNode;
-        queue=newNode;
+        cursor=newNode;
     }
     else
     {
-        newNode->next=queue->next;
-        queue->next=newNode;
+        newNode->next=cursor->next;
+        cursor->next=newNode;
+        cursor=newNode;
     }
+}
+
+void CircularLinkedList::advance()
+{
+	cursor=cursor->next;
 }
 
 void CircularLinkedList::removeFromHead()
 {
-    Node* nodeToDelete=queue->next;
+    Node* nodeToDelete=new Node;
+    nodeToDelete=cursor->next;
     if(isEmpty())
     {
-        cout<<"No node to remove";
+        cout<<"No node to remove"<<endl;
     }
     else
     {
-        if(nodeToDelete==queue)  //if queue has only one node
+        if(nodeToDelete==cursor)  //if queue has only one node
         {
-            queue=NULL;
+            cursor=NULL;
         }
         else
         {
-            queue->next=nodeToDelete->next
+            cursor->next=nodeToDelete->next;
         }
+        cout<<nodeToDelete->info<<endl;
         delete nodeToDelete;
     }
 }
+

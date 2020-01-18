@@ -17,7 +17,7 @@ int main()
     Cq.dequeue();
     Cq.enqueue(232);
     cout<<"front ele="<<Cq.front()<<endl;
-    cout<<"rear ele="<<Cq.rear()<<endl;
+    cout<<"rear ele"<<Cq.rear()<<endl;
 }
 
 //front-rear
