@@ -52,7 +52,7 @@ void CircularLinkedQueue::enqueue(int ele)
 {
     if(!isFull())
     {
-        C.addToTail(ele);
+        C.insert(ele);
         //C.advance();
         n++; 
     }
@@ -70,7 +70,7 @@ void CircularLinkedQueue::dequeue()
     }
     else
     {
-        C.removeFromHead();
+        C.remove();
         n--;
     }
 }

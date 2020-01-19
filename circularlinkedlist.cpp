@@ -20,15 +20,26 @@ int CircularLinkedList::head()
     {
         return cursor->next->info;
     }
+    else
+    {
+    	std::cout << "list is empyty"<< std:: endl;
+	}
+	
 }
 
 int CircularLinkedList::tail()
 {
     if(!isEmpty())
+    {
         return cursor->info;
+    }
+	 else
+    {
+    	std::cout << "list is empyty"<< std:: endl;
+	}    
 }
 
-void CircularLinkedList::addToTail(int ele)
+void CircularLinkedList::insert(int ele)
 {
     Node* newNode=new Node;
     newNode->info=ele;
@@ -50,7 +61,7 @@ void CircularLinkedList::advance()
 	cursor=cursor->next;
 }
 
-void CircularLinkedList::removeFromHead()
+void CircularLinkedList::remove()
 {
     Node* nodeToDelete=new Node;
     nodeToDelete=cursor->next;
@@ -60,7 +71,7 @@ void CircularLinkedList::removeFromHead()
     }
     else
     {
-        if(nodeToDelete==cursor)  //if queue has only one node
+        if(nodeToDelete==cursor)  // if queue has only one node
         {
             cursor=NULL;
         }
