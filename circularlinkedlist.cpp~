@@ -45,6 +45,11 @@ void CircularLinkedList::addToTail(int ele)
     }
 }
 
+void CircularLinkedList::advance()
+{
+	cursor=cursor->next;
+}
+
 void CircularLinkedList::removeFromHead()
 {
     Node* nodeToDelete=new Node;

@@ -13,6 +13,7 @@ class CircularLinkedQueue  //queue as circuraly linked list
     public:
         CircularLinkedQueue(int max_size);  //constructor
         ~CircularLinkedQueue();  //destructor
+        int size();  //number of items in queue
         bool isEmpty(); //is the queue empty?
         bool isFull();  //is the queue full?
         int front(); //front element of queue

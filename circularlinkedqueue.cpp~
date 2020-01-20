@@ -9,6 +9,11 @@ CircularLinkedQueue::CircularLinkedQueue(int max_size)
 
 CircularLinkedQueue::~CircularLinkedQueue(){}
 
+int CircularLinkedQueue::size()
+{
+    return n;
+}
+
 bool CircularLinkedQueue::isEmpty()
 {
     return n==0;
@@ -48,6 +53,7 @@ void CircularLinkedQueue::enqueue(int ele)
     if(!isFull())
     {
         C.addToTail(ele);
+        //C.advance();
         n++; 
     }
     else
